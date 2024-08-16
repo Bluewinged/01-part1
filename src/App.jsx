@@ -1,7 +1,10 @@
-const Hello = () => {
+const Hello = (props) => {
+  console.log(props);
   return (
     <>
-      <p>Hello world</p>
+      <p>
+        Hello {props.name}, you are {props.age} years old
+      </p>
     </>
   );
 };
@@ -11,6 +14,15 @@ const App = () => {
   const a = 10;
   const b = 20;
   console.log(now, a + b);
+
+  const nimi = "Pekka";
+  const ika = 10;
+  const friends = [
+    { name: "Leevi", age: 4 },
+
+    { name: "Venla", age: 10 },
+  ];
+
   return (
     <>
       <section>
@@ -22,8 +34,25 @@ const App = () => {
 
       <section>
         <h1>Greetings</h1>
-        <Hello />
+        <Hello name="Maya" age={26 + 10} />
+        <Hello name={nimi} age={ika} />
+        <p>
+          Kaverisi {friends[0].name}n ikä on {friends[0].age}
+        </p>
+        <p>
+          Kaverisi {friends[1].name}n ikä on {friends[1].age}
+        </p>
+        <Footer />
       </section>
+    </>
+  );
+};
+
+const Footer = () => {
+  return (
+    <>
+      greeting app created by
+      <a href="https://github.com/Bluewinged">Bluewinged</a>
     </>
   );
 };
