@@ -1,10 +1,12 @@
-const Hello = (props) => {
-  console.log(props);
+const Hello = ({ name, age }) => {
+  const bornYear = () => new Date().getFullYear() - age;
+
   return (
     <>
       <p>
-        Hello {props.name}, you are {props.age} years old
+        Hello {name}, you are {age} years old
       </p>
+      <p>So you were propably born {bornYear()}</p>
     </>
   );
 };
@@ -52,7 +54,7 @@ const Footer = () => {
   return (
     <>
       greeting app created by
-      <a href="https://github.com/Bluewinged">Bluewinged</a>
+      <a href="https://github.com/Bluewinged"> Bluewinged</a>
     </>
   );
 };
